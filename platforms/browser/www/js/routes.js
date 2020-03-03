@@ -12,4 +12,10 @@ var routes = [
     url: './internet.html',
     name: 'internet',
   }, 
+  {
+    //path: '/index/',
+    path: '/dashboard/',
+    url: './dashboard.html',
+    name: 'dashboard',
+  },
 ];
