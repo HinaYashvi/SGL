@@ -62,6 +62,7 @@ function checkConnection(){
 }
 // ------------------------------ MOBILE IMEI -------------------------------- //
 function logincheck(){
+  alert("logincheck");
   checkConnection();    
   var login_form = $(".login_form").serialize();  
   var mobile_num = $("#mobile_num").val();
@@ -103,8 +104,9 @@ function logincheck(){
               }
             });           
           }, function(error){
-            console.log(error);            
-            app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
+            console.log(error);   
+            alert(error);         
+            //app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
             return false;
           });
           mainView.router.navigate("/dashboard/");
@@ -114,17 +116,13 @@ function logincheck(){
           window.localStorage.setItem("session_uname",result.user_session[0].username);
           window.localStorage.setItem("session_stid",result.user_session[0].station_id);
           window.localStorage.setItem("session_email",result.user_session[0].email);
-        }/*else if(parse_authmsg=="Inc_pass"){
-          app.dialog.alert("Incorrect Password!");
-          return false;
-        }*/else if(parse_authmsg=="Inc_mobpass"){
+        }else if(parse_authmsg=="Inc_mobpass"){
           app.dialog.alert("Mobile no or password Incorrect");
           return false;
         }
       }
     });
   }
-
 }
 function showeye(){
   $(".showpass span").removeClass("display-none");
