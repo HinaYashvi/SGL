@@ -62,9 +62,9 @@ function checkConnection(){
 }
 // ------------------------------ MOBILE IMEI -------------------------------- //
 function logincheck(){
-  alert("logincheck");
   checkConnection();    
-  var login_form = $(".login_form").serialize();  
+  var login_form = $(".login_form").serialize();
+  alert(login_form);
   var mobile_num = $("#mobile_num").val();
   var pass = $("#pass").val();
   if(mobile_num==''){
@@ -82,7 +82,6 @@ function logincheck(){
       data:login_form,  
       success:function(authRes){
         var result = $.parseJSON(authRes);
-        alert(result);
         var parse_authmsg = result.auth_msg;
         alert(parse_authmsg);
         var user_session = result.user_session[0];
@@ -92,8 +91,8 @@ function logincheck(){
         if(parse_authmsg=="success"){
           var user_id = result.user_session[0].user_id;
           window.plugins.sim.getSimInfo(function(res){
-            alert("IMEI 1 : "+res.cards[0].deviceId);
-            alert("IMEI 2 : "+res.cards[1].deviceId);
+            //alert("IMEI 1 : "+res.cards[0].deviceId);
+            //alert("IMEI 2 : "+res.cards[1].deviceId);
             var imei_1 = res.cards[0].deviceId;
             var imei_2 = res.cards[1].deviceId;
             $.ajax({
@@ -101,13 +100,13 @@ function logincheck(){
               url:base_url+'APP/Appcontroller/updateIMEI',
               data:{'imei_no':imei_no,'imei_no_two':imei_no_two,'imei_1':imei_1,'imei_2':imei_2,'user_id':user_id},  
               success:function(imei_result){
-                alert(imei_result);
+
               }
             });           
           }, function(error){
-            console.log(error);   
-            alert(error);         
-            //app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
+            console.log(error);
+            alert("error "+error);
+            app.dialog.alert(error+" Unable to get IMEI of "+mobile_no);
             return false;
           });
           mainView.router.navigate("/dashboard/");
@@ -117,32 +116,34 @@ function logincheck(){
           window.localStorage.setItem("session_uname",result.user_session[0].username);
           window.localStorage.setItem("session_stid",result.user_session[0].station_id);
           window.localStorage.setItem("session_email",result.user_session[0].email);
-        }else if(parse_authmsg=="Inc_mobpass"){
+        }/*else if(parse_authmsg=="Inc_pass"){
+          app.dialog.alert("Incorrect Password!");
+          return false;
+        }*/else if(parse_authmsg=="Inc_mobpass"){
           app.dialog.alert("Mobile no or password Incorrect");
           return false;
         }
       }
     });
   }
-}
-function showeye(){
-  $(".showpass span").removeClass("display-none");
-  $(".showpass span").addClass("display-block"); 
-}
-function showpassword(show){
-  //alert(show);
-  if(show=='show'){
-    //$(".showpass span").html("");
-    $(".pass").attr('type','text');    
-    $(".showpass").html('<span class="f7-icons text-white fs-18" onclick="showpassword('+"'"+"hide"+"'"+')">eye_slash</span>');
-  }else if(show=='hide'){
-    //$(".showpass span").html("");
-    $(".pass").attr('type','password');
-    $(".showpass").html('<span class="f7-icons text-white fs-18" onclick="showpassword('+"'"+"show"+"'"+')">eye</span>');
-  }
+
 }
 
-/*function getIMEI(mobile_no){
+function getSimData(){
+  window.plugins.sim.getSimInfo(function(res){
+    alert("IMEI 1 : "+res.cards[0].deviceId);
+    alert("IMEI 2 : "+res.cards[1].deviceId);
+    var imei_1 = res.cards[0].deviceId;
+    var imei_2 = res.cards[1].deviceId;
+    return imei_1+"_"+imei_2;
+  }, function(error){
+    console.log(error);
+    alert("error "+error);
+    app.dialog.alert(error+" Unable to get IMEI of "+mobile_no);
+    return false;
+  });
+}
+function getIMEI(mobile_no){
   var mob_len = mobile_no.length;
   if(mob_len == 10){
     $.ajax({
@@ -196,4 +197,4 @@ function showpassword(show){
     app.dialog.alert("Mobile no should be of 10 digits.Enter a valid mobile no.");
     return false;
   }
-}*/
+}
