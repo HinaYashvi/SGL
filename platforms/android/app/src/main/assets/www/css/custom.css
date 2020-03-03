@@ -1,0 +1,83 @@
+.login-screen-content{
+    background:rgba(0, 0, 0, 0) url("../img/login_bg1.jpg") no-repeat fixed center center / cover;
+    background-size: cover;
+}
+.login-content{
+    text-align: center;
+}
+@font-face {
+  font-family: 'Framework7 Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Framework7Icons-Regular.eot");
+  src: url("../fonts/Framework7Icons-Regular.woff2") format("woff2"),
+       url("../fonts/Framework7Icons-Regular.woff") format("woff"),
+       url("../fonts/Framework7Icons-Regular.ttf") format("truetype");
+}
+.logo {
+    line-height: 225px;
+}
+#reg_formDiv{
+    margin: 0 auto;
+    display: block;
+}
+.inputbox{
+	/*margin: 0 45px 15px 45px;
+    width: 100%;*/
+    margin: 0 7px 15px 38px;
+}
+a {
+    text-decoration: none;
+    color: #777;
+}
+.login-screen-content .inputbox i{
+    background: rgba(229, 229, 229, 0.3) none repeat scroll 0 0;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 35px;
+    line-height: 33px;
+    position: absolute;
+    /*width: 35px;
+    right: 78%;    */
+    width: 37px;
+    right: 75%;
+}
+.login-screen-content .inputbox input{
+    /*background: rgba(230, 169, 169, 0.1) none repeat scroll 0 0;*/
+    background: rgba(255, 255, 255, 0.12) none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50px;
+    color: #fff;
+    height: 35px;
+    margin-bottom: 15px;
+    text-align: center;
+    /*width: 75%;*/
+    width: 90%;
+}
+.login-button {
+    /*margin: 0 auto;
+    margin:0 45px 0 45px;*/
+    margin: 0 38px 0 38px;
+    position: relative;
+    text-align: center;
+    /*width: 75%; */
+    width: 79%;
+}
+.login-screen-content .login-button a {
+    /*background: #1bbc9b none repeat scroll 0 0;
+    background: #006D5B none repeat scroll	0 0;*/
+    background:rgba(255, 255, 255, 0.31)!important;
+    border-radius: 50px;
+    color: #fff;
+    display: block;
+    font-weight: 600;
+    height: 35px;
+    line-height: 35px;
+}
+.showpass{
+  position: absolute;
+  right: 14%;
+  padding-top: 2%;
+}

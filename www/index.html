@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <link rel="stylesheet" type="text/css" href="css/framework7-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+    <!--link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"-->
+    <title>Sabarmati Gas Limited</title>
+</head> 
+
+<body>
+<div id="app">
+  <div class="statusbar"></div>
+  <div class="view view-main view-init" data-url="/">
+    <div class="page no-navbar no-swipeback" data-name="index">
+     
+  <div class="page-content login-screen-content"> 
+    
+                 
+    <div class="login-content">
+      <div class="logo">
+        <a href="#"><img src="img/sgl_logo.png"/></a>
+      </div>
+      <form id='login_form' class="login_form">
+        <div id="reg_formDiv">      
+          <div class="inputbox">
+              <i class="f7-icons text-white">phone_fill</i> 
+              <input type="number" placeholder="Mobile No" name="mobile_num" id='mob_login' class="pholder mobile_no" >
+          </div>
+          <span class="text-left text-red mt-0" id='umoberror'></span>
+                  
+          <div class="inputbox">
+              <i class="f7-icons text-white">lock_fill</i>
+              <span class="showpass" ><span onclick="showpassword('show')" class="f7-icons text-white display-none fs-18" >eye</span></span>
+              <input type="password" placeholder="Password" id='pass' name="u_pass" class="pholder pass l_pass" onkeyup="showeye()">
+          </div>
+          <span class="text-left text-red mt-0" id='passerror'></span>
+                  
+          <div class="login-button submit-box text-uppercase">
+              <a href="#" onclick="return logincheck()">Log In</a>
+          </div>
+
+
+          <div class="submit-box text-uppercase mt-5">
+              <a href="/forgot_password/" class="no_background text-white fs-12">Forgot Password?</a>
+          </div> 
+
+        </div>
+      </form>
+      
+      <!--p>Don’t have an account ? <a data-popup=".popup-register" class="open-popup" href="sign-up.html">Sign Up</a></p><br><br-->                  
+    </div>
+  </div>
+
+      <!--div class="page-content"></div-->      
+    </div>
+  </div>
+</div>  
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript" src="js/framework7.bundle.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/routes.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+
+
+<script type="text/javascript">
+  //console.log(Framework7.prototype.device);
+  if(Framework7.prototype.device.android) { 
+      //alert("android");
+      Dom7('head').append(                  
+          '<link rel="stylesheet" href="css/android.css">' 
+      );
+  }/*else{
+    //alert("Browser");
+    Dom7('head').append(
+          '<link rel="stylesheet" href="css/ios.css">'
+      );
+  }*/
+</script> 
+</body>
+</html>
