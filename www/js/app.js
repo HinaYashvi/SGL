@@ -64,7 +64,6 @@ function checkConnection(){
 function logincheck(){
   checkConnection();    
   var login_form = $(".login_form").serialize();
-  alert(login_form);
   var mobile_num = $("#mobile_num").val();
   var pass = $("#pass").val();
   if(mobile_num==''){
@@ -83,7 +82,7 @@ function logincheck(){
       success:function(authRes){
         var result = $.parseJSON(authRes);
         var parse_authmsg = result.auth_msg;
-        alert(parse_authmsg);
+        //alert(parse_authmsg);
         var user_session = result.user_session[0];
         //var imei_status = result.imei_status;
         var imei_no = result.imei_no;
@@ -104,9 +103,9 @@ function logincheck(){
               }
             });           
           }, function(error){
-            console.log(error);
-            alert("error "+error);
-            app.dialog.alert(error+" Unable to get IMEI of "+mobile_no);
+            //console.log(error);
+            //alert("error "+error);
+            app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
             return false;
           });
           mainView.router.navigate("/dashboard/");
@@ -116,10 +115,7 @@ function logincheck(){
           window.localStorage.setItem("session_uname",result.user_session[0].username);
           window.localStorage.setItem("session_stid",result.user_session[0].station_id);
           window.localStorage.setItem("session_email",result.user_session[0].email);
-        }/*else if(parse_authmsg=="Inc_pass"){
-          app.dialog.alert("Incorrect Password!");
-          return false;
-        }*/else if(parse_authmsg=="Inc_mobpass"){
+        }else if(parse_authmsg=="Inc_mobpass"){
           app.dialog.alert("Mobile no or password Incorrect");
           return false;
         }
@@ -128,8 +124,21 @@ function logincheck(){
   }
 
 }
-
-function getSimData(){
+function showeye(){
+  $(".showpass span").removeClass("display-none");
+  $(".showpass span").addClass("display-block");
+}
+function showpassword(show){
+  //alert(show);
+  if(show=='show'){
+    $(".pass").attr('type','text');    
+    $(".showpass").html('<span class="f7-icons text-white fs-18" onclick="showpassword('+"'"+"hide"+"'"+')">eye_slash</span>');
+  }else if(show=='hide'){
+    $(".pass").attr('type','password');
+    $(".showpass").html('<span class="f7-icons text-white fs-18" onclick="showpassword('+"'"+"show"+"'"+')">eye</span>');
+  }
+}
+/*function getSimData(){
   window.plugins.sim.getSimInfo(function(res){
     alert("IMEI 1 : "+res.cards[0].deviceId);
     alert("IMEI 2 : "+res.cards[1].deviceId);
@@ -197,4 +206,4 @@ function getIMEI(mobile_no){
     app.dialog.alert("Mobile no should be of 10 digits.Enter a valid mobile no.");
     return false;
   }
-}
+}*/
