@@ -107,7 +107,7 @@ function logincheck(){
             //alert("error "+error);
             app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
             return false;
-          });
+          }); 
           mainView.router.navigate("/dashboard/");
           window.localStorage.setItem("session_pid",result.user_session[0].user_id);
           window.localStorage.setItem("session_utype",result.user_session[0].user_type);
