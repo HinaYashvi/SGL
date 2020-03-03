@@ -76,27 +76,16 @@ function logincheck(){
     $("#passerror").html("Password is required.");
     return false;
   }else{
-
-    window.plugins.sim.getSimInfo(function(res){
-      alert("IMEI 1 : "+res.cards[0].deviceId);
-      alert("IMEI 2 : "+res.cards[1].deviceId);
-      var imei_1 = res.cards[0].deviceId;
-      var imei_2 = res.cards[1].deviceId;
-    }, function(error){
-      console.log(error);
-      alert("error "+error);
-      app.dialog.alert(error+" Unable to get IMEI of "+mobile_no);
-      return false;
-    });
-    //alert("IMEI 1********** : "+res.cards[0].deviceId);
-    //alert("IMEI 2********** : "+res.cards[1].deviceId);*/
+    var simdata = getSimInfo();
+    alert("simdata "+simdata);
     $.ajax({
       type:'POST', 
       url:base_url+'APP/Appcontroller/authenticateUser',
       data:login_form,  
       success:function(authRes){
         var result = $.parseJSON(authRes);
-        var parse_authmsg = result.auth_msg;alert(parse_authmsg);
+        var parse_authmsg = result.auth_msg;
+        alert(parse_authmsg);
         var user_session = result.user_session[0];
         var imei_status = result.imei_status;
         var imei_no = result.imei_no;
