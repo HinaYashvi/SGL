@@ -81,8 +81,7 @@ function logincheck(){
       data:login_form,  
       success:function(authRes){
         var result = $.parseJSON(authRes);
-        var parse_authmsg = result.auth_msg;
-        alert(parse_authmsg);
+        var parse_authmsg = result.auth_msg;        
         var user_session = result.user_session[0];
         var imei_no = result.imei_no;
         var imei_no_two = result.imei_no_two;
@@ -98,7 +97,6 @@ function logincheck(){
               url:base_url+'APP/Appcontroller/updateIMEI',
               data:{'imei_no':imei_no,'imei_no_two':imei_no_two,'imei_1':imei_1,'imei_2':imei_2,'user_id':user_id},  
               success:function(imei_result){
-
               }
             });           
           }, function(error){
@@ -137,72 +135,3 @@ function showpassword(show){
     $(".showpass").html('<span class="f7-icons text-white fs-18" onclick="showpassword('+"'"+"show"+"'"+')">eye</span>');
   }
 }
-/*function getSimData(){
-  window.plugins.sim.getSimInfo(function(res){
-    alert("IMEI 1 : "+res.cards[0].deviceId);
-    alert("IMEI 2 : "+res.cards[1].deviceId);
-    var imei_1 = res.cards[0].deviceId;
-    var imei_2 = res.cards[1].deviceId;
-    return imei_1+"_"+imei_2;
-  }, function(error){
-    console.log(error);
-    alert("error "+error);
-    app.dialog.alert(error+" Unable to get IMEI of "+mobile_no);
-    return false;
-  });
-}
-function getIMEI(mobile_no){
-  var mob_len = mobile_no.length;
-  if(mob_len == 10){
-    $.ajax({
-      type:'POST',
-      url:base_url+"APP/Appcontroller/checkMobileNo",
-      data:{'mobile_no':mobile_no},
-      success:function(result){
-        var mob_res = $.parseJSON(result);
-        var msg = mob_res.msg;
-        var imei_status = mob_res.imei_status;
-        if(msg=='exist'){
-          window.plugins.sim.getSimInfo(function(res){
-            alert("IMEI 1 : "+res.cards[0].deviceId);
-            alert("IMEI 2 : "+res.cards[1].deviceId);
-            var imei_1 = res.cards[0].deviceId;
-            var imei_2 = res.cards[1].deviceId;
-
-            var db_imei_no = mob_res.imei_no;
-            var db_imei_no_two = mob_res.imei_no_two;
-
-            if(imei_status=='both_empty'){
-              var imei_data={'imei_no':imei_1,'imei_no_two':imei_2}
-            }else if(imei_status=='two_empty'){
-              var imei_data={'imei_no_two':imei_2}
-            }else if(imei_status=='one_empty'){
-              var imei_data={'imei_no':imei_1}
-            }else if(imei_status=='no_empty'){
-              var imei_data={'imei_no':imei_1,'imei_no_two':imei_2}
-            }
-            $.ajax({
-              type:'POST',
-              url:base_url+"APP/Appcontroller/updateIMEI",
-              data:imei_data+"&db_imei_no="+db_imei_no+"&db_imei_no_two"+db_imei_no_two,
-              success:function(imei_result){
-                alert(imei_result);
-              }
-            });
-          }, function(error){
-            console.log(error);
-            alert("error "+error);
-            app.dialog.alert(error+" Unable to get IMEI of "+mobile_no);
-            return false;
-          });
-        }else if(msg=='no_exist'){
-          app.dialog.alert("Your mobile no is not registered with Sabarmati Gas Limited.");
-          return false;
-        }
-      }
-    });
-  }else{
-    app.dialog.alert("Mobile no should be of 10 digits.Enter a valid mobile no.");
-    return false;
-  }
-}*/
