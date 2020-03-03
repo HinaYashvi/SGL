@@ -82,6 +82,7 @@ function logincheck(){
       data:login_form,  
       success:function(authRes){
         var result = $.parseJSON(authRes);
+        alert(result);
         var parse_authmsg = result.auth_msg;
         alert(parse_authmsg);
         var user_session = result.user_session[0];
