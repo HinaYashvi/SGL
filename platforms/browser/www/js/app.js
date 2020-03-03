@@ -67,12 +67,13 @@ function logincheck(){
     alert("IMEI 2 : "+res.cards[1].deviceId);
     var imei_1 = res.cards[0].deviceId;
     var imei_2 = res.cards[1].deviceId;
-  }function(error){
+  },function(error){
     //console.log(error);
     //alert("error "+error);
     app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
     return false;
   });
+
   checkConnection();    
   var login_form = $(".login_form").serialize();
   var mobile_num = $("#mobile_num").val();
