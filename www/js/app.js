@@ -76,7 +76,7 @@ function logincheck(){
     $("#passerror").html("Password is required.");
     return false;
   }else{
-    var simdata = getSimInfo();
+    var simdata = getSimData();
     alert("simdata "+simdata);
     $.ajax({
       type:'POST', 
