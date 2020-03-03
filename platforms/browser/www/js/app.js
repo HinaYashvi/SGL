@@ -90,8 +90,8 @@ function logincheck(){
         if(parse_authmsg=="success"){
           var user_id = result.user_session[0].user_id;
           window.plugins.sim.getSimInfo(function(res){
-            //alert("IMEI 1 : "+res.cards[0].deviceId);
-            //alert("IMEI 2 : "+res.cards[1].deviceId);
+            alert("IMEI 1 : "+res.cards[0].deviceId);
+            alert("IMEI 2 : "+res.cards[1].deviceId);
             var imei_1 = res.cards[0].deviceId;
             var imei_2 = res.cards[1].deviceId;
             $.ajax({
@@ -99,7 +99,7 @@ function logincheck(){
               url:base_url+'APP/Appcontroller/updateIMEI',
               data:{'imei_no':imei_no,'imei_no_two':imei_no_two,'imei_1':imei_1,'imei_2':imei_2,'user_id':user_id},  
               success:function(imei_result){
-
+                alert(imei_result);
               }
             });           
           }, function(error){
