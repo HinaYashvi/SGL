@@ -62,18 +62,6 @@ function checkConnection(){
 }
 // ------------------------------ MOBILE IMEI -------------------------------- //
 function logincheck(){
-  window.plugins.sim.getSimInfo(function(res){
-    alert("IMEI 1 : "+res.cards[0].deviceId);
-    alert("IMEI 2 : "+res.cards[1].deviceId);
-    var imei_1 = res.cards[0].deviceId;
-    var imei_2 = res.cards[1].deviceId;
-  },function(error){
-    //console.log(error);
-    //alert("error "+error);
-    app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
-    return false;
-  });
-
   checkConnection();    
   var login_form = $(".login_form").serialize();
   var mobile_num = $("#mobile_num").val();
@@ -94,13 +82,12 @@ function logincheck(){
       success:function(authRes){
         var result = $.parseJSON(authRes);
         var parse_authmsg = result.auth_msg;
-        //alert(parse_authmsg);
+        alert(parse_authmsg);
         var user_session = result.user_session[0];
-        //var imei_status = result.imei_status;
         var imei_no = result.imei_no;
         var imei_no_two = result.imei_no_two;
         if(parse_authmsg=="success"){
-          /*var user_id = result.user_session[0].user_id;
+          var user_id = result.user_session[0].user_id;
           window.plugins.sim.getSimInfo(function(res){
             //alert("IMEI 1 : "+res.cards[0].deviceId);
             //alert("IMEI 2 : "+res.cards[1].deviceId);
@@ -119,7 +106,7 @@ function logincheck(){
             //alert("error "+error);
             app.dialog.alert(error+" Unable to get IMEI of "+mobile_num);
             return false;
-          }); */ 
+          });  
           mainView.router.navigate("/dashboard/"); 
           window.localStorage.setItem("session_pid",result.user_session[0].user_id);
           window.localStorage.setItem("session_utype",result.user_session[0].user_type);
