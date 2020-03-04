@@ -8,51 +8,51 @@
   },
   "installed_plugins": {
     "cordova-plugin-battery-status": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "phonegap-plugin-barcodescanner": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-sim": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     }
   }
 }

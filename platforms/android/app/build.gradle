@@ -98,7 +98,6 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "../phonegap-plugin-barcodescanner/SGL-barcodescanner.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -295,7 +294,6 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     implementation "com.android.support:support-v4:24.1.1+"
-    implementation "com.android.support:support-v4:27.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

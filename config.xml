@@ -10,7 +10,7 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="orientation" value="portrait" />    
+    <preference name="orientation" value="portrait" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
@@ -30,7 +30,7 @@
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
-    </platform>    
+    </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -54,4 +54,5 @@
     <plugin name="cordova-plugin-vibration" spec="~2.1.5" />
     <plugin name="cordova-plugin-sim" spec="~1.3.3" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.4" />
+    <plugin name="cordova-plugin-barcodescanner" spec="~0.7.4" />
 </widget>

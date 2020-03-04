@@ -15,10 +15,6 @@
             {
               "xml": "<feature name=\"Device\"><param name=\"browser-package\" value=\"Device\" /></feature>",
               "count": 1
-            },
-            {
-              "xml": "<feature name=\"BarcodeScanner\"><param name=\"browser-package\" value=\"BarcodeScanner\" /></feature>",
-              "count": 1
             }
           ]
         }
@@ -26,50 +22,50 @@
     }
   },
   "installed_plugins": {
-    "cordova-plugin-battery-status": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "phonegap-plugin-barcodescanner": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
     },
     "cordova-plugin-sim": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
     }
   },
   "dependent_plugins": {},
@@ -462,6 +458,14 @@
       "runs": true
     },
     {
+      "file": "plugins/cordova-plugin-sim/www/sim.js",
+      "id": "cordova-plugin-sim.Sim",
+      "pluginId": "cordova-plugin-sim",
+      "merges": [
+        "window.plugins.sim"
+      ]
+    },
+    {
       "file": "plugins/cordova-plugin-vibration/www/vibration.js",
       "id": "cordova-plugin-vibration.notification",
       "pluginId": "cordova-plugin-vibration",
@@ -480,31 +484,17 @@
       ]
     },
     {
-      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-      "pluginId": "phonegap-plugin-barcodescanner",
+      "file": "plugins/cordova-plugin-barcodescanner/www/barcodescanner.js",
+      "id": "cordova-plugin-barcodescanner.BarcodeScanner",
+      "pluginId": "cordova-plugin-barcodescanner",
       "clobbers": [
         "cordova.plugins.barcodeScanner"
-      ]
-    },
-    {
-      "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-      "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-      "pluginId": "phonegap-plugin-barcodescanner",
-      "runs": true
-    },
-    {
-      "file": "plugins/cordova-plugin-sim/www/sim.js",
-      "id": "cordova-plugin-sim.Sim",
-      "pluginId": "cordova-plugin-sim",
-      "merges": [
-        "window.plugins.sim"
       ]
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-battery-status": "1.2.5",
     "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-battery-status": "1.2.5",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-device": "1.1.7",
     "cordova-plugin-dialogs": "1.3.4",
@@ -514,9 +504,9 @@
     "cordova-plugin-inappbrowser": "1.7.2",
     "cordova-plugin-media-capture": "1.4.3",
     "cordova-plugin-network-information": "1.3.4",
+    "cordova-plugin-sim": "1.3.3",
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-whitelist": "1.3.4",
-    "phonegap-plugin-barcodescanner": "8.1.0",
-    "cordova-plugin-sim": "1.3.3"
+    "cordova-plugin-barcodescanner": "0.7.4"
   }
 }

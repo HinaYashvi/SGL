@@ -43,8 +43,7 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.phonegap.SGL"
     },
-    "phonegap-plugin-barcodescanner": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+    "cordova-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.phonegap.SGL"
     }
   },

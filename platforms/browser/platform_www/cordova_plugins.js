@@ -388,6 +388,14 @@ module.exports = [
         "runs": true
     },
     {
+        "file": "plugins/cordova-plugin-sim/www/sim.js",
+        "id": "cordova-plugin-sim.Sim",
+        "pluginId": "cordova-plugin-sim",
+        "merges": [
+            "window.plugins.sim"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-vibration/www/vibration.js",
         "id": "cordova-plugin-vibration.notification",
         "pluginId": "cordova-plugin-vibration",
@@ -406,33 +414,19 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-        "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-        "pluginId": "phonegap-plugin-barcodescanner",
+        "file": "plugins/cordova-plugin-barcodescanner/www/barcodescanner.js",
+        "id": "cordova-plugin-barcodescanner.BarcodeScanner",
+        "pluginId": "cordova-plugin-barcodescanner",
         "clobbers": [
             "cordova.plugins.barcodeScanner"
-        ]
-    },
-    {
-        "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-        "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-        "pluginId": "phonegap-plugin-barcodescanner",
-        "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-sim/www/sim.js",
-        "id": "cordova-plugin-sim.Sim",
-        "pluginId": "cordova-plugin-sim",
-        "merges": [
-            "window.plugins.sim"
         ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-battery-status": "1.2.5",
     "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-battery-status": "1.2.5",
     "cordova-plugin-camera": "2.4.1",
     "cordova-plugin-device": "1.1.7",
     "cordova-plugin-dialogs": "1.3.4",
@@ -442,10 +436,10 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.7.2",
     "cordova-plugin-media-capture": "1.4.3",
     "cordova-plugin-network-information": "1.3.4",
+    "cordova-plugin-sim": "1.3.3",
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-whitelist": "1.3.4",
-    "phonegap-plugin-barcodescanner": "8.1.0",
-    "cordova-plugin-sim": "1.3.3"
+    "cordova-plugin-barcodescanner": "0.7.4"
 }
 // BOTTOM OF METADATA
 });

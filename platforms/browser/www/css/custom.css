@@ -1,4 +1,4 @@
-.login-screen-content{
+.login-screen-content,.dashboard-screen-content{
     background:rgba(0, 0, 0, 0) url("../img/login_bg1.jpg") no-repeat fixed center center / cover;
     background-size: cover;
 }
@@ -80,4 +80,27 @@ a {
   position: absolute;
   right: 14%;
   padding-top: 2%;
+}
+.text-white{
+    color:white;
+}
+.navbg{
+    background-color: gray;
+}
+div.container4 { 
+    height: 10em;
+    position: relative;
+}
+div.container4 p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 600;
+}
+.text-uppercase{
+    text-transform: uppercase;
 }

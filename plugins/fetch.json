@@ -95,6 +95,14 @@
     "is_top_level": true,
     "variables": {}
   },
+  "cordova-plugin-sim": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-sim"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
@@ -103,18 +111,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "phonegap-plugin-barcodescanner": {
+  "cordova-plugin-barcodescanner": {
     "source": {
       "type": "registry",
-      "id": "phonegap-plugin-barcodescanner@8.1.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-sim": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-sim"
+      "id": "cordova-plugin-barcodescanner"
     },
     "is_top_level": true,
     "variables": {}
