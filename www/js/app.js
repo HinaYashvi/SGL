@@ -57,6 +57,7 @@ var pictureSource; // picture source
 var destinationType;
 function onDeviceReady() { 
   //alert("HELLO");  
+
   pictureSource = navigator.camera.PictureSourceType;
   destinationType = navigator.camera.DestinationType;  
 }
@@ -94,7 +95,7 @@ function logincheck(){
   //alert("hi");
   checkConnection();    
   var lform = $(".lform").serialize();  
-  //console.log(lform+"***");
+  console.log(lform+"***");
   var mobile_num = $("#mob_login").val();
   var pass = $("#pass").val();
 
@@ -215,6 +216,9 @@ function gotonext_four(txtval){
     }
   });
 });  */
+$(document).on('page:init', '.page[data-name="index"]', function (e) {
+  //console.log(e);
+});
 $(document).on('page:init', '.page[data-name="vst"]', function (e) {
   checkConnection();
   cordova.plugins.barcodeScanner.scan(function (result) {
@@ -335,9 +339,11 @@ $(document).on('page:init', '.page[data-name="add_vst"]', function (page) {
 function add_vst(){
   checkConnection();
   var form_vst = $("#form_vst").serialize();
-  var v_type = $('input[name="vtype"]').val();
+  //var v_type = $('input[name="vtype"]').val();
+  var v_type = $("#vtype").val();
+  //alert(" v_type "+v_type);
   var barcode_code = $('input[name="barcode_code"]').val();
-  console.log(form_vst);
+  //console.log(form_vst);
   var old_metalplate='NULL';
   var old_rcbook='NULL';
   var old_from24='NULL';
@@ -348,14 +354,16 @@ function add_vst(){
     data:form_vst,
     success:function(lastid){
       upload_metalplate(lastid,old_metalplate,v_type,barcode_code);
-      upload_rcbook(lastid,old_rcbook,v_type,barcode_code);
-      upload_form24(lastid,old_from24,v_type,barcode_code);
-      upload_numplate(lastid,old_numplate,v_type,barcode_code);
+      //upload_rcbook(lastid,old_rcbook,v_type,barcode_code);
+      //upload_form24(lastid,old_from24,v_type,barcode_code);
+      //upload_numplate(lastid,old_numplate,v_type,barcode_code);
     }
   });
 }
 function upload_metalplate(lastid,old_metalplate,v_type,barcode_code){
+  //alert("called");
   var session_uid = window.localStorage.getItem("session_uid");
+  //alert("session_uid "+session_uid);
   var img = document.getElementById('image');
   var imageURI = img.src;
   var options = new FileUploadOptions();
@@ -366,7 +374,7 @@ function upload_metalplate(lastid,old_metalplate,v_type,barcode_code){
   options.headers = {
      Connection: "close" 
   };
-  var params = {}; 
+  var params = {};  
   params.fullpath =imageURI;
   params.name = options.fileName;
   var imgfilename = params.name; 
@@ -375,6 +383,8 @@ function upload_metalplate(lastid,old_metalplate,v_type,barcode_code){
   var actual_imgname1 = split_imgfilename[0];
   var img_filename1 = actual_imgname1.split('%20').join('_');
   var uploadControllerURL = base_url+"APP/Appcontroller/photoupload_metal/"+barcode_code+"/"+v_type+"/"+session_uid+"/"+lastid+"/"+old_metalplate+"/"+img_filename1; 
+  //alert(uploadControllerURL);
+  console.log(uploadControllerURL);
   ft.upload(imageURI,uploadControllerURL, win, fail, options,true);
 }
 function win(r) { 

@@ -1,7 +1,7 @@
 var routes = [
   // Index page
   {
-    path: '/index/',
+    path: '/',
     url: './index.html',
     name: 'index',
   },

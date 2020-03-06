@@ -393,6 +393,30 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugins.barcodeScanner"
       ]
+    },
+    {
+      "id": "cordova-plugin-file-transfer.FileTransferError",
+      "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
+      "pluginId": "cordova-plugin-file-transfer",
+      "clobbers": [
+        "window.FileTransferError"
+      ]
+    },
+    {
+      "id": "cordova-plugin-file-transfer.FileTransfer",
+      "file": "plugins/cordova-plugin-file-transfer/www/FileTransfer.js",
+      "pluginId": "cordova-plugin-file-transfer",
+      "clobbers": [
+        "window.FileTransfer"
+      ]
+    },
+    {
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -409,6 +433,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-sim": "1.3.3",
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-whitelist": "1.3.4",
-    "phonegap-plugin-barcodescanner": "8.1.0"
+    "phonegap-plugin-barcodescanner": "8.1.0",
+    "cordova-plugin-file-transfer": "1.5.0",
+    "cordova-plugin-statusbar": "2.4.3"
   };
 });

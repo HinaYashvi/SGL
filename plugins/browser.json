@@ -45,6 +45,12 @@
     },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.phonegap.SGL"
     }
   },
   "dependent_plugins": {
