@@ -95,7 +95,7 @@ function logincheck(){
   //alert("hi");
   checkConnection();    
   var lform = $(".lform").serialize();  
-  console.log(lform+"***");
+  //console.log(lform+"***");
   var mobile_num = $("#mob_login").val();
   var pass = $("#pass").val();
 
@@ -222,8 +222,9 @@ $(document).on('page:init', '.page[data-name="index"]', function (e) {
 $(document).on('page:init', '.page[data-name="vst"]', function (e) {
   checkConnection();
   cordova.plugins.barcodeScanner.scan(function (result) {
+
     var qr_code = result.text;
-    //alert(qr_code);
+    alert(qr_code);
     $.ajax({
       type:'POST', 
       url:base_url+'APP/Appcontroller/checkVehicleQR',
