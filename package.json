@@ -27,17 +27,20 @@
       "cordova-plugin-vibration": {},
       "cordova-plugin-sim": {},
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     },
     "platforms": [
-      "browser"
+      "browser",
+      "android"
     ]
   },
   "dependencies": {
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
-    "cordova-plugin-barcodescanner": "^0.7.4",
     "cordova-plugin-sim": "^1.3.3",
-    "cordova-plugin-whitelist": "^1.3.4"
+    "cordova-plugin-whitelist": "^1.3.4",
+    "phonegap-plugin-barcodescanner": "^8.1.0"
   }
 }
